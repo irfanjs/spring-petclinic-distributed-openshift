@@ -31,6 +31,8 @@ node {
     unstash name:"jar"
    sh "oc start-build configapp --from-file=spring-petclinic-config-server/target/spring-petclinic-config-server-2.0.4.jar --follow --loglevel 10"
    sh "oc start-build discoveryapp --from-file=spring-petclinic-discovery-server/target/spring-petclinic-discovery-server-2.0.4.jar --follow --loglevel 10" 
+   sh "sleep 30"
+   sh "oc start-build apigatewayapp --from-file=spring-petclinic-api-gateway/target/spring-petclinic-api-gateway-2.0.4.jar --follow --loglevel 10"  
    
    /*openshiftBuild apiURL: 'https://master.na39.openshift.opentlc.com', authToken: 'IdXwlyWZphf_A00Z9X02qMv57gyictVDMoBdA1PobQo', buildName: 'target/spring-petclinic-openshift-2.0.0.BUILD-SNAPSHOT.jar', bldCfg: 'mypet', checkForTriggeredDeployments: 'false', commitID: '', namespace: 'coe-mern-project', showBuildLogs: 'false', verbose: 'false', waitTime: '', waitUnit: 'sec'*/
    /*openshiftExec apiURL: 'https://master.na39.openshift.opentlc.com', arguments: [[value: 'petclinic-pipeline --from-file=target/spring-petclinic-openshift-2.0.0.BUILD-SNAPSHOT.jar --follow']], authToken: 'IdXwlyWZphf_A00Z9X02qMv57gyictVDMoBdA1PobQo', command: 'oc start-build', container: '', namespace: 'coe-mern-project', pod: 'jenkins-5-h7p9s', verbose: 'true', waitTime: '', waitUnit: 'sec'*/
