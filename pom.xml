@@ -68,6 +68,14 @@
                 <version>${assertj.version}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+            <plugin>
+  <groupId>org.jacoco</groupId>
+  <artifactId>jacoco-maven-plugin</artifactId>
+  <version>${jacoco.version}</version>
+</plugin>
+           </dependency>     
+                
         </dependencies>
     </dependencyManagement>
 
