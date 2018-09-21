@@ -37,6 +37,7 @@
         <docker.image.exposed.port>9090</docker.image.exposed.port>
         <docker.image.dockerfile.dir>${basedir}</docker.image.dockerfile.dir>
         <docker.plugin.version>0.4.13</docker.plugin.version>
+          <jacoco.version>0.8.1</jacoco.version>
     </properties>
 
     <dependencyManagement>
@@ -124,6 +125,26 @@
                             </generateGitPropertiesFilename>
                         </configuration>
                     </plugin>
+                    
+                     <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
                 </plugins>
             </build>
 
