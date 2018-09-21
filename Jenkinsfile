@@ -16,9 +16,9 @@ node {
    junit '**/target/surefire-reports/TEST*.xml' 
   }
   
-  stage('Record Jacoco coverage report') {
+ /* stage('Record Jacoco coverage report') {
    jacoco() 
-  }
+  } */
   
      
   /* stage('Execute Unit test(s)') {
